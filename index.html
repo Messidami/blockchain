@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blockchain</title>
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="shortcut icon" href="blob:https://web.whatsapp.com/e39fe8f4-50c3-44f0-94d3-327a32e05da8" type="image/x-icon">
+</head>
+<body>
+     <div class="email-card">
+    <h2>Send Custom Email</h2>
+    <form id="emailForm">
+      <input type="email" name="to_email" placeholder="Recipient Email" required>
+      <input type="email" name="reply_email" placeholder="Your Reply Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Type your message..." required></textarea>
+      <button type="submit">Send Email</button>
+    </form>
+    <p class="footer">Powered by EmailJS</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("-yHcI5zAIg6MaJswF"); // replace with your actual EmailJS public key
+    })();
+
+    document.getElementById("emailForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_ddzm93i", "template_ungm9zd", this)
+        .then(() => alert("✅ Email sent successfully!"))
+        .catch(err => alert("❌ Failed to send email: " + JSON.stringify(err)));
+    });
+  </script>
+</body>
+</html>
