@@ -29,10 +29,12 @@
     document.getElementById("emailForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
-      emailjs.sendForm("service_ddzm93i", "template_ungm9zd", this)
+      emailjs.sendForm("", "template_ungm9zd", this)
         .then(() => alert("✅ Email sent successfully!"))
         .catch(err => alert("❌ Failed to send email: " + JSON.stringify(err)));
     });
   </script>
+
+  service_ddzm93i
 </body>
 </html>
